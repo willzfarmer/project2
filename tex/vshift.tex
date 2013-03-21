@@ -1,0 +1,49 @@
+\section{Vertical Shifting}
+
+Very similar to the horizontal position change, the vertical position change
+merely requires the transformation matrix to be shifted row-wise as opposed
+to
+column-wise.
+\[
+  \underbrace{
+    \begin{bmatrix}
+      1&0&0\\
+      0&1&0\\
+      0&0&1\\
+    \end{bmatrix}
+  }_{\text{Identity Matrix}}
+  \implies
+  \underbrace{
+    \begin{bmatrix}
+      0&0&1\\
+      1&0&0\\
+      0&1&0\\
+    \end{bmatrix}
+  }_{\text{Transformation
+  Matrix}}
+\]
+\[ 
+  \begin{bmatrix}
+    0&0&1\\
+    1&0&0\\
+    0&1&0\\
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    a&b&c\\
+    d&e&f\\
+    g&h&i\\
+  \end{bmatrix}
+  =
+  \underbrace{
+    \begin{bmatrix}
+      c&a&b\\
+      f&d&e\\
+      i&g&h\\
+    \end{bmatrix}
+  }_{\text{the
+    horizontally
+    shifted
+  matrix}}
+\]
+
