@@ -177,10 +177,94 @@ Since each primary color is freely editable, it is simple to scale the intensity
         \caption{Grayscale Images}
         \label{fig:gray_images}
     \end{figure}
-
+\newpage
 \section{Horizontal Shifting}
 
 Now that we are working in grayscale, it is far more straightforward to manipulate aspects of the image, such as its horizontal position.  Since we are dealing with a normal matrix, transforming the positions of columns requires only that we multiply the image matrix by a transformation identity matrix.
+
+As discussed in the lab instructions, to shift an image horizontally without
+losing information requires the use of a transformation matrix as shown below.
+
+\[
+  \underbrace{
+  \begin{bmatrix}
+  1&0&0\\
+  0&1&0\\
+  0&0&1\\
+  \end{bmatrix}
+}_{\text{Identity Matrix}}
+  \implies
+  \underbrace{
+  \begin{bmatrix}
+  0&1&0\\
+  0&0&1\\
+  1&0&0\\
+  \end{bmatrix}
+}_{\text{Transformation Matrix}}
+\]
+
+\[ 
+  \begin{bmatrix}
+  0&0&1\\
+  1&0&0\\
+  0&1&0\\
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+  a&b&c\\
+  d&e&f\\
+  g&h&i\\
+\end{bmatrix}
+=
+\underbrace{
+  \begin{bmatrix}
+  a&b&c\\
+  d&e&f\\
+  g&h&i\\
+\end{bmatrix}
+}_{\text{the horizontally shifted matrix}}
+\]
+
+    \begin{figure}[ht]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[scale=0.7]{./img/hsg1.png}
+            \caption{Photo 1 Horizontal Shift}
+            \label{fig:p1hg}
+        \end{subfigure}
+        \begin{subfigure}{\textwidth}
+            \centering
+            \includegraphics[scale=0.7]{./img/hsg2.png}
+            \caption{Photo 2 - Horizontal Shift}
+            \label{fig:p2hg}
+        \end{subfigure}
+        \caption{Horizontally Shifted Images}
+        \label{fig:hs_images}
+    \end{figure}
+
+\section{Vertical Shifting}
+
+Very similar to the horizontal position change, the vertical position change
+merely requires the transformation matrix to be shifted row-wise as opposed to
+column-wise.
+\[
+  \underbrace{
+  \begin{bmatrix}
+  1&0&0\\
+  0&1&0\\
+  0&0&1\\
+  \end{bmatrix}
+}_{\text{Identity Matrix}}
+  \implies
+  \underbrace{
+  \begin{bmatrix}
+  0&0&1\\
+  1&0&0\\
+  0&1&0\\
+  \end{bmatrix}
+}_{\text{Transformation Matrix}}
+\]
 
     \begin{figure}[ht]
         \centering
@@ -242,83 +326,102 @@ Now that we are working in grayscale, it is far more straightforward to manipula
 
 \section{Code}
 
-The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}\footnote{If you are unable to download the code from this link, please download it from \framebox{\href{http://will-farmer.com/diffeq/Project_2_matrices/code.tar.gz}{here}}}.
+The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}.
 
     \subsection{Python}
 
     The Python code to generate the images is included below.
 
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+    \newpage
+
+    \subsection{MATLAB Code}
+
+    Some MATLAB Code was also made that features equivalent functionality
+
         \subsubsection{Grayscale}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=128,
-                        lastline=135,
-                        frame=single,
-                        basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
-                        numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
 
-        \subsubsection{Horizontal Shift}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=100,
-                        lastline=112,
-                        frame=single,
+        \lstinputlisting[language=Matlab,
                         basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
-                        numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
-
-        \subsubsection{Vertical Shift}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=114,
-                        lastline=126,
                         frame=single,
-                        basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
+                        keywordstyle=\color{orange},
                         numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
+                        commentstyle=\color{cyan}]{./mat2/grayscale.m}
 
-        \subsubsection{Inversion}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=88,
-                        lastline=98,
+        \subsubsection{Horizontal Shifting}
+
+        \lstinputlisting[language=Matlab,
+                        basicstyle=\ttfamily,
                         frame=single,
-                        basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
+                        keywordstyle=\color{orange},
                         numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
+                        commentstyle=\color{cyan}]{./mat2/hshift.m}
 
-        \subsubsection{Discrete Sine Transform}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=181,
-                        lastline=198,
+        \subsubsection{Vertical Shifting}
+
+        \lstinputlisting[language=Matlab,
+                        basicstyle=\ttfamily,
                         frame=single,
-                        basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
+                        keywordstyle=\color{orange},
                         numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
+                        commentstyle=\color{cyan}]{./mat2/vshift.m}
 
-        \subsubsection{Compression}
+\end{document}
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[scale=0.7]{./img/vhsg1.png}
+        \caption{Photo 1 - Vertical and Horizontal Shift}
+        \label{fig:p1vg}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[scale=0.7]{./img/vhsg2.png}
+        \caption{Photo 2 - Vertital and Horizontal Shift}
+        \label{fig:p2vg}
+    \end{subfigure}
+    \caption{Vertically Shifted Images}
+    \label{fig:vs_images}
+\end{figure}
+
+\newpage
+
+\section{Inversion}
+
+\section{Transposition}
+
+\section{Discrete Sine Transform}
+
+\section{DST Restrictions}
+
+\section{Reversing the DST}
+
+\section{Compression}
+
+\section{Optimization}
+
+\newpage
+
+\appendix
+
+\section{Code}
+
+The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}.
+
+    \subsection{Python}
+
+    The Python code to generate the images is included below.
+
         \lstinputlisting[language=Python,
                         showstringspaces=false,
-                        firstline=155,
-                        lastline=179,
-                        frame=single,
-                        basicstyle=\ttfamily,
-                        keywordstyle=\color{blue},
-                        numbers=left,
-                        commentstyle=\color{red}]{./py/analysis.py}
-
-        \subsubsection{Optimization}
-        \lstinputlisting[language=Python,
-                        showstringspaces=false,
-                        firstline=216,
-                        lastline=283,
                         frame=single,
                         basicstyle=\ttfamily,
                         keywordstyle=\color{blue},
