@@ -326,102 +326,83 @@ column-wise.
 
 \section{Code}
 
-The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}.
+The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}\footnote{If you are unable to download the code from this link, please download it from \framebox{\href{http://will-farmer.com/diffeq/Project_2_matrices/code.tar.gz}{here}}}.
 
     \subsection{Python}
 
     The Python code to generate the images is included below.
 
+        \subsubsection{Grayscale}
         \lstinputlisting[language=Python,
                         showstringspaces=false,
+                        firstline=128,
+                        lastline=135,
                         frame=single,
                         basicstyle=\ttfamily,
                         keywordstyle=\color{blue},
                         numbers=left,
                         commentstyle=\color{red}]{./py/analysis.py}
 
-    \newpage
-
-    \subsection{MATLAB Code}
-
-    Some MATLAB Code was also made that features equivalent functionality
-
-        \subsubsection{Grayscale}
-
-        \lstinputlisting[language=Matlab,
-                        basicstyle=\ttfamily,
-                        frame=single,
-                        keywordstyle=\color{orange},
-                        numbers=left,
-                        commentstyle=\color{cyan}]{./mat2/grayscale.m}
-
-        \subsubsection{Horizontal Shifting}
-
-        \lstinputlisting[language=Matlab,
-                        basicstyle=\ttfamily,
-                        frame=single,
-                        keywordstyle=\color{orange},
-                        numbers=left,
-                        commentstyle=\color{cyan}]{./mat2/hshift.m}
-
-        \subsubsection{Vertical Shifting}
-
-        \lstinputlisting[language=Matlab,
-                        basicstyle=\ttfamily,
-                        frame=single,
-                        keywordstyle=\color{orange},
-                        numbers=left,
-                        commentstyle=\color{cyan}]{./mat2/vshift.m}
-
-\end{document}
-\begin{figure}[ht]
-    \centering
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[scale=0.7]{./img/vhsg1.png}
-        \caption{Photo 1 - Vertical and Horizontal Shift}
-        \label{fig:p1vg}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[scale=0.7]{./img/vhsg2.png}
-        \caption{Photo 2 - Vertital and Horizontal Shift}
-        \label{fig:p2vg}
-    \end{subfigure}
-    \caption{Vertically Shifted Images}
-    \label{fig:vs_images}
-\end{figure}
-
-\newpage
-
-\section{Inversion}
-
-\section{Transposition}
-
-\section{Discrete Sine Transform}
-
-\section{DST Restrictions}
-
-\section{Reversing the DST}
-
-\section{Compression}
-
-\section{Optimization}
-
-\newpage
-
-\appendix
-
-\section{Code}
-
-The entire codebase for the project follows, and is available for download \attachfile{./code.tar.gz}{here}.
-
-    \subsection{Python}
-
-    The Python code to generate the images is included below.
-
+        \subsubsection{Horizontal Shift}
         \lstinputlisting[language=Python,
                         showstringspaces=false,
+                        firstline=100,
+                        lastline=112,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+        \subsubsection{Vertical Shift}
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        firstline=114,
+                        lastline=126,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+        \subsubsection{Inversion}
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        firstline=88,
+                        lastline=98,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+        \subsubsection{Discrete Sine Transform}
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        firstline=181,
+                        lastline=198,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+        \subsubsection{Compression}
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        firstline=155,
+                        lastline=179,
+                        frame=single,
+                        basicstyle=\ttfamily,
+                        keywordstyle=\color{blue},
+                        numbers=left,
+                        commentstyle=\color{red}]{./py/analysis.py}
+
+        \subsubsection{Optimization}
+        \lstinputlisting[language=Python,
+                        showstringspaces=false,
+                        firstline=216,
+                        lastline=283,
                         frame=single,
                         basicstyle=\ttfamily,
                         keywordstyle=\color{blue},
