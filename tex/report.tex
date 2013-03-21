@@ -1,0 +1,88 @@
+\documentclass[10pt]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Includes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}    % Math formatting
+\usepackage{amsthm}     % Math Theorems
+\usepackage{amsfonts}   % Math formatting
+\usepackage{amssymb}    % Math formatting
+\usepackage{setspace}   % Allow double spacing
+\usepackage{graphicx}   % Include images
+\usepackage{times}      % Use Times New Roman font
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}   % Include pdfs
+\usepackage{tikz}       % Create Pictures
+\usepackage{pgfplots}   % Create Pictures
+\usepackage{caption}    % Figure captioning
+\usepackage{subcaption} % Figure captioning
+\usepackage{media9}     % include animated .gifs
+\usepackage{attachfile} % AttachFiles
+\usepackage{tocloft}    % List of Equations
+\usepackage{listings}   % Fancy Code display
+\usepackage{color}      % Fancy Colors
+\usepackage{fancyhdr}   % Fancy Header
+\usepackage{microtype}  % Fancy spacing
+\usepackage{hyperref}   % Reference
+\hypersetup{hidelinks}
+\RequirePackage[l2tabu, orthodox]{nag} % Nag about bad syntax
+\renewcommand*\thesection{\arabic{section}} % Renew Section numbers for report class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nvec}[1]{\left\langle #1 \right\rangle}        % Easy to use vector
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}           % Easy to use abs
+\newcommand{\pren}[1]{\left( #1 \right)}                    % Big parens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beginning of document items - headers, title, toc, etc...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[LE,LO]{APPM 2360 - Differential Equations}   % Adds header to left
+\fancyhead[RE,RO]{Project Two - Matrices}               % Adds header to right
+
+\title{\attachfile{./tex/report.tex}{Image Manipulation Using Matrix Techniques\footnote{Report \LaTeX Source Code is attached.}}}   % Attachs .tex file to pdf
+\author{
+\begin{tabular}{l | l | l | l | l}
+    Names & Student ID & Professor & TA & Recitation\\
+    \hline
+    Will Farmer & 101446930 & Mimi Dai & Amrik Sen & 608\\
+    \hline
+    Jeffrey Milhorn & 100556107 & Kevin Manley & Ed Yasutake & 605\\
+    \hline
+    Patrick Harrington &100411000 & Mimi Dai & Ash Same & 618\\
+\end{tabular}}
+\date{Friday, March 22}
+\maketitle
+
+\tableofcontents                                                    % These two lines are needed to
+\addcontentsline{toc}{section}{Table of Contents}                   % initialize and display TOC
+\listoffigures                                                      % These two lines are needed to
+\addcontentsline{lof}{section}{List of Figures}                     % initialize and display LOF
+
+\newcommand{\listequationsname}{\Large{List of Equations}}          % Funky code to include LOE
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\listofmyequations
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beginning of content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./tex/introduction.tex}
+\input{./tex/grayscale.tex}
+\newpage
+\input{./tex/hshift.tex}
+\input{./tex/vshift.tex}
+\newpage
+\input{./tex/inv.tex}
+
+\input{./tex/trans.tex}
+\input{./tex/dst.tex}
+\input{./tex/dstrestrict.tex}
+\input{./tex/revdst.tex}
+\input{./tex/compress.tex}
+\input{./tex/optimization.tex}
+\input{./tex/code.tex}
+\end{document}
