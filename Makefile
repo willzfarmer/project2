@@ -2,7 +2,7 @@ all: code.tar.gz all.tar.gz comp1.gif comp2.gif comp3.gif
 	pdflatex ./tex/report.tex
 	pdflatex ./tex/report.tex
 	pdflatex ./tex/report.tex
-	rm *.out *.log *.aux *.toc *.lof *.equ
+	rm *.out *.log *.aux *.toc *.lof
 
 code.tar.gz:
 	tar -czvf code.tar.gz ./py ./mat2

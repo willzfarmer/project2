@@ -1,14 +1,14 @@
 \section{Restrictions on Compression with the Discrete Sine Transform}
+
 With the given equation to transform images using the Discrete Sine Transform \eqref{eq:dst}, there does exist a limitation on the initial image aspect ratio -- the image \textit{must} by square. If it is not square, then the dot product will not work, and the image will not be compressed. The reason behind this is that since we are performing a dot product on the same matrix on either side, we know that in order for it to work it needs to be the same size after either operation is performed. The only matrix this holds true for is a square matrix.
 
 That being said, the code below expresses a different algorithm. Instead of being limited to square matrices through the nuances of dot products, the code instead separates the two operations and performs them separately using two differently sized DST matrices. This algorithm is not limited by square matrices since it creates a new DST matrix for each operation.
 
-\newpage
     \lstinputlisting[language=Python,
                     showstringspaces=false,
                     frame=single,
-                    firstline=177,
-                    lastline=188,
+                    firstline=181,
+                    lastline=192,
                     basicstyle=\ttfamily,
                     keywordstyle=\color{blue},
                     numbers=left,

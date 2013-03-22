@@ -95,6 +95,10 @@ def manipulate(image, name):
     flipped = flip(g)
     scipy.misc.imsave('../img/flip%s.png' %name, flipped)
 
+    # Create Transpose
+    tp = numpy.transpose(g)
+    scipy.misc.imsave('../img/transpose%s.png' %name, tp)
+
 def flip(image):
     '''
     flips an image
