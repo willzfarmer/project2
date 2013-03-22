@@ -22,27 +22,29 @@ column-wise.
   }_{\text{Transformation
   Matrix}}
 \]
+Unlike the horizontal matrix shift, the order by which the transformation
+matrix is applied is reversed:
 \[ 
-  \begin{bmatrix}
-    0&0&1\\
-    1&0&0\\
-    0&1&0\\
-  \end{bmatrix}
-  \cdot
   \begin{bmatrix}
     a&b&c\\
     d&e&f\\
     g&h&i\\
   \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    0&0&1\\
+    1&0&0\\
+    0&1&0\\
+  \end{bmatrix}
   =
   \underbrace{
     \begin{bmatrix}
-      c&a&b\\
-      f&d&e\\
-      i&g&h\\
+    g&h&i\\
+    a&b&c\\
+    d&e&f\\
     \end{bmatrix}
-  }_{\text{the
-    horizontally
+  }_{\text{The
+    vertically
     shifted
   matrix}}
 \]
@@ -51,14 +53,14 @@ column-wise.
   \centering
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[scale=0.7]{./img/vhsg1.png}
+    \includegraphics[scale=0.4]{./img/vhsg1.png}
     \caption{Photo 1 - Vertical and
     Horizontal Shift}
     \label{fig:p1vg}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[scale=0.7]{./img/vhsg2.png}
+    \includegraphics[scale=0.4]{./img/vhsg2.png}
     \caption{Photo
       2
       -
@@ -73,3 +75,5 @@ column-wise.
   Images}
   \label{fig:vs_images}
 \end{figure}
+
+We can do both horizontal and vertical translations on our image matrix, but we must do the operations separately for photo1.jpg since they do not involve the same number of iterations. For example, we can first do the horizontal translation by using the same procedure above where the transformation matrix is second in the matrix multiplication (the transformation matrix would be dimension $n \times n$, where “$n$” equals the column dimension of photo1.jpg, 408). After performing the 240 iterations of this horizontal translation we can then translate the image matrix vertically. We now place the transformation matrix first in the matrix multiplication; its dimensions must match the row dimension of the image. Therefore, this vertical transformation matrix is $201\times 201$.

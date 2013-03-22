@@ -40,7 +40,7 @@
 \fancyhead[LE,LO]{APPM 2360 - Differential Equations}   % Adds header to left
 \fancyhead[RE,RO]{Project Two - Matrices}               % Adds header to right
 
-\title{\attachfile{./tex/report.tex}{Image Manipulation Using Matrix Techniques\footnote{Report \LaTeX Source Code is attached.}}}   % Attachs .tex file to pdf
+\title{Image Manipulation Using Matrix Techniques}
 \author{
 \begin{tabular}{l | l | l | l | l}
     Names & Student ID & Professor & TA & Recitation\\
@@ -59,12 +59,6 @@
 \listoffigures                                                      % These two lines are needed to
 \addcontentsline{lof}{section}{List of Figures}                     % initialize and display LOF
 
-\newcommand{\listequationsname}{\Large{List of Equations}}          % Funky code to include LOE
-\newlistof{myequations}{equ}{\listequationsname}
-\newcommand{\myequations}[1]{%
-\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
-\listofmyequations
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Beginning of content
@@ -72,17 +66,16 @@
 
 \input{./tex/introduction.tex}
 \input{./tex/grayscale.tex}
-\newpage
 \input{./tex/hshift.tex}
 \input{./tex/vshift.tex}
-\newpage
 \input{./tex/inv.tex}
-
 \input{./tex/trans.tex}
 \input{./tex/dst.tex}
 \input{./tex/dstrestrict.tex}
 \input{./tex/revdst.tex}
 \input{./tex/compress.tex}
 \input{./tex/optimization.tex}
-\input{./tex/code.tex}
+\input{./tex/conclusion.tex}
+\input{./tex/py.tex}
+\input{./tex/mat.tex}
 \end{document}

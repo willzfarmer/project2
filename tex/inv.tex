@@ -1,2 +1,54 @@
 \section{Inversion}
 
+In order to flip a matrix upside down, we first had to generate an identity
+matrix of the appropriate size where the rows had the opposite diagonal
+direction.
+
+\[
+  \underbrace{
+    \begin{bmatrix}
+      1&0&0\\
+      0&1&0\\
+      0&0&1\\
+    \end{bmatrix}
+  }_{\text{Identity Matrix}}
+  \implies
+  \underbrace{
+    \begin{bmatrix}
+      0&0&1\\
+      0&1&0\\
+      1&0&0\\
+    \end{bmatrix}
+  }_{\text{Transformation
+  Matrix}}
+\]
+This was done by setting up the identity matrix as a two dimensional array; in
+other words, a list of lists. Then this list was iterated through and each list
+in the main list was flipped front-to-back. This action had the same effect as
+flipping the entire matrix on the horizontal axis. Finally, as before with the
+shifting process, we multiplied the matrix on the appropriate side of the
+matrix.
+\[ 
+  \begin{bmatrix}
+    0&0&1\\
+    0&1&0\\
+    1&0&0\\
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    a&b&c\\
+    d&e&f\\
+    g&h&i\\
+  \end{bmatrix}
+  =
+  \underbrace{
+  \begin{bmatrix}
+    g&h&i\\
+    d&e&f\\
+    a&b&c\\
+  \end{bmatrix}
+  }_{\text{The
+  inverted  
+  matrix}}
+\]
+

@@ -1,4 +1,4 @@
-all: code.tar.gz all.tar.gz comp1.gif comp2.gif
+all: code.tar.gz all.tar.gz comp1.gif comp2.gif comp3.gif
 	pdflatex ./tex/report.tex
 	pdflatex ./tex/report.tex
 	pdflatex ./tex/report.tex
@@ -15,3 +15,6 @@ comp1.gif:
 
 comp2.gif:
 	convert -delay 10 -loop 0 ./img/comparray_2_* ./img/comp2.gif
+
+comp3.gif:
+	convert -delay 10 -loop 0 ./img/comparray_3_* ./img/comp3.gif
